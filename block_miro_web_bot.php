@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -16,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   block_miro_web_bot
- * @copyright 2020 Moodle Pty Ltd (http://moodle.com)
- * @author    Samuel Calegari
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    block_miro_web_bot
+ * @copyright  2020 - 2021 Université de Perpignan (https://www.univ-perp.fr)
+ * @author     Samuel Calegari <samuel.calegari@univ-perp.fr>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 class block_miro_web_bot extends block_base

@@ -15,16 +15,34 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Privacy Subsystem implementation for block_miro_web_bot.
+ *
  * @package    block_miro_web_bot
  * @copyright  2020 - 2021 Université de Perpignan (https://www.univ-perp.fr)
  * @author     Samuel Calegari <samuel.calegari@univ-perp.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Miro Web Bot';
-$string['miro_web_bot'] = 'Virtual Assistant';
-$string['miro_web_bot:addinstance'] = 'Launch chat session with Miro Bot on a web client';
-$string['miro_web_bot:myaddinstance'] = 'Launch chat session with Miro Bot on a web client';
-$string['start_conversation'] = 'Start a conversation';
-$string['bearer'] = 'Bearer Authentication';
-$string['config_bearer'] = 'Bearer Authentication';
+namespace block_miro_web_bot\privacy;
+
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Privacy Subsystem for block_miro_web_bot implementing null_provider.
+ *
+ * @copyright  2020 - 2021 Université de Perpignan (https://www.univ-perp.fr)
+ * @author     Samuel Calegari <samuel.calegari@univ-perp.fr>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}
