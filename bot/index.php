@@ -31,6 +31,9 @@
         $userpicture->size = 1; // Size f1.
         $avatar = $userpicture->get_url($PAGE)->out(false);
         $username = $USER->username;
+        $firstname = substr($USER->firstname,0,1);
+        $lastname = substr($USER->lastname,0,1);
+        $initials = strtoupper($firstname . $lastname);
     }
 
     $bearer = $CFG->block_miro_web_bot_bearer;
@@ -71,7 +74,9 @@
             bubbleFromUserBackground: '#1b78ce',
             bubbleFromUserTextColor: '#fff',
             botAvatarImage: 'https://raw.githubusercontent.com/samuelcalegari/assets/main/bot.png',
+            botAvatarInitials: 'MB',
             userAvatarImage: '<?php echo ($avatar)?>',
+            userAvatarInitials: '<?php echo ($initials)?>',
             notificationText: '#999',
             timestampColor: '#999',
             backgroundColor: '#eee',

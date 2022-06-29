@@ -22,7 +22,7 @@
  */
 
 $plugin->component = 'block_miro_web_bot';
-$plugin->version = 2020040700;  // YYYYMMDDHH (year, month, day, 24-hr time)
+$plugin->version = 2022062900;  // YYYYMMDDHH (year, month, day, 24-hr time)
 $plugin->requires = 2016051900; // YYYYMMDDHH (This is the release version for Moodle 3.1)
-$plugin->release = '1.0 (Build: 2020040700)';
+$plugin->release = '1.1 (Build: 2022062900)';
 $plugin->maturity = MATURITY_STABLE;
