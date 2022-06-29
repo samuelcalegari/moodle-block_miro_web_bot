@@ -70,7 +70,7 @@
             bubbleTextColor: '#333',
             bubbleFromUserBackground: '#1b78ce',
             bubbleFromUserTextColor: '#fff',
-            botAvatarImage: 'https://forco.univ-perp.fr/theme/forco/bot/bot.png',
+            botAvatarImage: 'https://raw.githubusercontent.com/samuelcalegari/assets/main/bot.png',
             userAvatarImage: '<?php echo ($avatar)?>',
             notificationText: '#999',
             timestampColor: '#999',
