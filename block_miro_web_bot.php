@@ -16,22 +16,24 @@
 
 /**
  * @package    block_miro_web_bot
- * @copyright  2020 - 2021 Université de Perpignan (https://www.univ-perp.fr)
+ * @copyright  2020 - 2022 Université de Perpignan (https://www.univ-perp.fr)
  * @author     Samuel Calegari <samuel.calegari@univ-perp.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class block_miro_web_bot extends block_base
 {
-    public function init() {
-        $this->title = get_string('miro_web_bot', 'block_miro_web_bot');
+    public function init()
+    {
+       $this->title = get_string('miro_web_bot', 'block_miro_web_bot');
     }
 
-    public function has_config() {
+    public function has_config()
+    {
         return true;
     }
 
-    public function get_content() {
+    public function get_content()
+    {
 
         if ($this->content !== null) {
             return $this->content;
@@ -40,18 +42,36 @@ class block_miro_web_bot extends block_base
         $this->content = new stdClass;
 
         $content = '';
-        $content .= html_writer::div('','',array('id' => "block_miro_web_bot_wrapper"));
+        $content .= html_writer::div('', '', array('id' => "block_miro_web_bot_wrapper"));
         $content .= html_writer::link(
             new moodle_url('/blocks/miro_web_bot/bot/index.php'),
             get_string('start_conversation', 'block_miro_web_bot'),
-            array('target'=> '_blank', 'class' => 'btn btn-primary')
+            array('target' => '_blank', 'class' => 'btn btn-primary')
         );
 
-        $this->content->text   = $content;
+        $this->content->text = $content;
         return $this->content;
     }
 
-    public function instance_allow_multiple(){
+    public function instance_allow_multiple()
+    {
         return false;
+    }
+
+    /**
+     * Gets Javascript that may be required for navigation
+     */
+    function get_required_javascript()
+    {
+        parent::get_required_javascript();
+
+        if(get_config('block_miro_web_bot', 'show_btn') == 1) {
+
+            $arguments = array(
+                'content' => get_config('block_miro_web_bot', 'btn_content'),
+                'style' => get_config('block_miro_web_bot', 'btn_style')
+            );
+            $this->page->requires->js_call_amd('block_miro_web_bot/addbutton', 'init', $arguments);
+        }
     }
 }

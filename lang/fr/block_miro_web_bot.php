@@ -16,7 +16,7 @@
 
 /**
  * @package    block_miro_web_bot
- * @copyright  2020 - 2021 Université de Perpignan (https://www.univ-perp.fr)
+ * @copyright  2020 - 2022 Université de Perpignan (https://www.univ-perp.fr)
  * @author     Samuel Calegari <samuel.calegari@univ-perp.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,3 +28,9 @@ $string['miro_web_bot:myaddinstance'] = 'Lance une discussion avec le robot Miro
 $string['start_conversation'] = 'Démarrer une conversation';
 $string['bearer'] = 'Bearer Authentication';
 $string['config_bearer'] = 'Bearer Authentication';
+$string['show_btn'] = 'Afficher le bouton';
+$string['config_show_btn'] = 'Afficher un bouton pour converser avec l\'assistant virtuel';
+$string['btn_content'] = 'Contenu du bouton';
+$string['config_btn_content'] = 'Contenu du bouton (HTML)';
+$string['btn_style'] = 'Style du bouton';
+$string['config_btn_style'] = 'Style du bouton (CSS)';

@@ -24,6 +24,7 @@
 
     require_once("../../../config.php");
     global $USER, $PAGE, $CFG;
+    $PAGE->set_context(context_system::instance());
 
     if($USER->id !=0) {
 
@@ -36,7 +37,7 @@
         $initials = strtoupper($firstname . $lastname);
     }
 
-    $bearer = $CFG->block_miro_web_bot_bearer;
+    $bearer = get_config('block_miro_web_bot', 'bearer');
 ?>
 <!DOCTYPE html>
 <html>

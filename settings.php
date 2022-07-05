@@ -16,7 +16,7 @@
 
 /**
  * @package    block_miro_web_bot
- * @copyright  2020 - 2021 Université de Perpignan (https://www.univ-perp.fr)
+ * @copyright  2020 - 2022 Université de Perpignan (https://www.univ-perp.fr)
  * @author     Samuel Calegari <samuel.calegari@univ-perp.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,6 +25,39 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    $settings->add(new admin_setting_configtext('block_miro_web_bot_bearer', get_string('bearer', 'block_miro_web_bot'),
-        get_string('config_bearer', 'block_miro_web_bot'), ''));
+    $settings->add(
+        new admin_setting_configtext(
+            'block_miro_web_bot/bearer',
+            get_string('bearer', 'block_miro_web_bot'),
+            get_string('config_bearer', 'block_miro_web_bot'),
+            ''
+        )
+    );
+
+    $settings->add(
+        new admin_setting_configcheckbox(
+            'block_miro_web_bot/show_btn',
+            get_string('show_btn', 'block_miro_web_bot'),
+            get_string('config_show_btn', 'block_miro_web_bot'),
+            1
+        )
+    );
+
+    $settings->add(
+        new  admin_setting_configtextarea(
+            'block_miro_web_bot/btn_content',
+            get_string('btn_content', 'block_miro_web_bot'),
+            get_string('config_btn_content', 'block_miro_web_bot'),
+            ''
+        )
+    );
+
+    $settings->add(
+        new  admin_setting_configtextarea(
+            'block_miro_web_bot/btn_style',
+            get_string('btn_style', 'block_miro_web_bot'),
+            get_string('config_btn_style', 'block_miro_web_bot'),
+            ''
+        )
+    );
 }
